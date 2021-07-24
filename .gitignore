@@ -15,3 +15,5 @@ cache/devices/*
 cache/messages/*
 cache/provisions/*
 !.gitignore
+
+dist

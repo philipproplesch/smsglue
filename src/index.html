@@ -361,11 +361,13 @@
           <div class="form">
             <p class="error"><b>Error:</b> Verify your login information and try again.</p>
             <form name="enable">
-              <label for="user">VoIP.ms User Name</label>
+              <label for="user">Signalwire Space</label>
+              <input type="text" class="form-control" id="scope" name="scope" placeholder="space">
+              <label for="user">Signalwire Project ID</label>
               <input type="email" class="form-control" id="user" name="user" placeholder="your.voip.ms@email-address.com">
-              <label for="pass">VoIP.ms API Password</label>
+              <label for="pass">Signalwire Token</label>
               <input type="password" class="form-control" minlength="8" id="pass" name="pass" placeholder="Password">
-              <label for="did">VoIP.ms&nbsp;DID (10&nbsp;digit,&nbsp;US/Canada&nbsp;number)</label>
+              <label for="did">Signalwire&nbsp;DID (10&nbsp;digit,&nbsp;US/Canada&nbsp;number)</label>
               <input type="tel" class="form-control" minlength="10" maxlength="10" id="did" name="did" placeholder="1234567890">
             </form>
             <button class="step step-3-done">Activate VoIP.ms SMS</button>
@@ -456,6 +458,7 @@
 
         // Submit form
         $.post('/enable', {
+          scope: $('input[name=scope]').val(),
           user: $('input[name=user]').val(),
           pass: $('input[name=pass]').val(),
           did: $('input[name=did]').val(),
